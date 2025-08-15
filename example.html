@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLCardComponent 使用示例</title>
+  <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>HLCardComponent 组件库示例</h1>
+    
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <!-- HLCard 示例 -->
+      <div style="width: 300px;">
+        <hl-card>
+          <template #header>
+            <h3>基础卡片示例</h3>
+          </template>
+          <template #body>
+            <p>这是一个基础的HLCard组件示例</p>
+          </template>
+        </hl-card>
+      </div>
+      
+      <!-- Loading 示例 -->
+      <div style="width: 300px; height: 200px;">
+        <hl-loading theme-color="light"></hl-loading>
+      </div>
+      
+      <!-- Empty 示例 -->
+      <div style="width: 300px; height: 200px;">
+        <hl-empty theme-color="light"></hl-empty>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./dist/lutwelve-components.umd.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello HLCardComponent!'
+        }
+      }
+    });
+    
+    // 使用组件库
+    app.use(LutwelveComponents.default);
+    
+    app.mount('#app');
+  </script>
+</body>
+</html>
